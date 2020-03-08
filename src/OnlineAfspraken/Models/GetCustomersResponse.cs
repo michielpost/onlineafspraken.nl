@@ -41,7 +41,7 @@ namespace OnlineAfspraken.Models
 
         private int idField;
 
-        private ushort accountNumberField;
+        private string accountNumberField;
 
         private string firstNameField;
 
@@ -93,7 +93,7 @@ namespace OnlineAfspraken.Models
         }
 
         /// <remarks/>
-        public ushort AccountNumber
+        public string AccountNumber
         {
             get
             {

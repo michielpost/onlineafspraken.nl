@@ -60,7 +60,7 @@ namespace OnlineAfspraken.Models
 
         private string customerNameField;
 
-        private byte statusField;
+        private int statusField;
 
         private byte labelField;
 
@@ -205,7 +205,7 @@ namespace OnlineAfspraken.Models
         }
 
         /// <remarks/>
-        public byte Status
+        public int Status
         {
             get
             {

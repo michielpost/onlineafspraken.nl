@@ -50,7 +50,7 @@ namespace OnlineAfspraken
             return obj;
         }
 
-        public async Task<GetCustomersResponse> GetCustomers(DateTimeOffset? updatedAfter, int? limit = null, int? offset = null)
+        public async Task<GetCustomersResponse> GetCustomers(DateTimeOffset? updatedAfter = null, int? limit = null, int? offset = null)
         {
             var queryParams = new Dictionary<string, string>();
             if (updatedAfter.HasValue)
@@ -65,7 +65,7 @@ namespace OnlineAfspraken
             return obj;
         }
 
-        public async Task<GetCustomerResponse> GetCustomer(int id)
+        public async Task<GetCustomerResponse> GetCustomer(long id)
         {
             var queryParams = new Dictionary<string, string>();
             queryParams.Add("id", id.ToString());

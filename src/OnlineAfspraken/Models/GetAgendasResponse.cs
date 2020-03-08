@@ -10,16 +10,15 @@ namespace OnlineAfspraken.Models
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class Response
+    [System.Xml.Serialization.XmlRootAttribute(ElementName = "Response", Namespace = "", IsNullable = false)]
+    public partial class GetAgendasResponse : BaseResponse
     {
 
-        private ResponseObjects objectsField;
-
-        private string[] textField;
+        private ResponseAgenda[] objectsField;
 
         /// <remarks/>
-        public ResponseObjects Objects
+        [System.Xml.Serialization.XmlArrayItemAttribute("Agenda", IsNullable = false)]
+        public ResponseAgenda[] Objects
         {
             get
             {
@@ -30,55 +29,18 @@ namespace OnlineAfspraken.Models
                 this.objectsField = value;
             }
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string[] Text
-        {
-            get
-            {
-                return this.textField;
-            }
-            set
-            {
-                this.textField = value;
-            }
-        }
     }
 
     /// <remarks/>
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class ResponseObjects
+    public partial class ResponseAgenda
     {
 
-        private ResponseObjectsAgenda agendaField;
+        private ushort idField;
 
-        /// <remarks/>
-        public ResponseObjectsAgenda Agenda
-        {
-            get
-            {
-                return this.agendaField;
-            }
-            set
-            {
-                this.agendaField = value;
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class ResponseObjectsAgenda
-    {
-
-        private byte idField;
-
-        private string nameField;
+        private object nameField;
 
         private string dateFormatField;
 
@@ -89,7 +51,7 @@ namespace OnlineAfspraken.Models
         private byte isDefaultField;
 
         /// <remarks/>
-        public byte Id
+        public ushort Id
         {
             get
             {
@@ -102,7 +64,7 @@ namespace OnlineAfspraken.Models
         }
 
         /// <remarks/>
-        public string Name
+        public object Name
         {
             get
             {
@@ -166,6 +128,9 @@ namespace OnlineAfspraken.Models
             }
         }
     }
+
+
+
 
 
 }

@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <WarningsAsErrors>CS8600;CS8602;CS8602;CS8603;CS8625;CS8613</WarningsAsErrors>
     <PackageId>OnlineAfspraken.nl</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>Michiel Post</Authors>
     <Description>Open source library for onlineafspraken.nl</Description>
     <PackageProjectUrl>https://github.com/michielpost/onlineafspraken.nl</PackageProjectUrl>

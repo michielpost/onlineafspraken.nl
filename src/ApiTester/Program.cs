@@ -25,7 +25,7 @@ namespace ApiTester
             var agendaId = agendas.Objects.First().Id;
 
             //All appointments for the coming year
-            var afspraken = await client.GetAppointments(agendaId, DateTimeOffset.UtcNow, DateTime.UtcNow.AddYears(1));
+            var afspraken = await client.GetAppointments(agendaId, DateTimeOffset.UtcNow, DateTime.UtcNow.AddYears(1), includeCancelled: 1);
 
             Console.WriteLine($"Found {afspraken.Objects.Length} afspraken");
 

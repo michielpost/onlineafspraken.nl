@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace OnlineAfspraken.Models
 {
@@ -54,11 +55,11 @@ namespace OnlineAfspraken.Models
 
         private byte capacityField;
 
-        private uint appointmentTypeIdField;
+        private string? appointmentTypeIdField;
 
-        private string customerIdField;
+        private string? customerIdField;
 
-        private string customerNameField;
+        private string? customerNameField;
 
         private int statusField;
 
@@ -166,7 +167,8 @@ namespace OnlineAfspraken.Models
         }
 
         /// <remarks/>
-        public uint AppointmentTypeId
+        [XmlElementAttribute(IsNullable = true)]
+        public string? AppointmentTypeId
         {
             get
             {
@@ -179,7 +181,8 @@ namespace OnlineAfspraken.Models
         }
 
         /// <remarks/>
-        public string CustomerId
+        [XmlElementAttribute(IsNullable = true)]
+        public string? CustomerId
         {
             get
             {
@@ -192,7 +195,8 @@ namespace OnlineAfspraken.Models
         }
 
         /// <remarks/>
-        public string CustomerName
+        [XmlElementAttribute(IsNullable = true)]
+        public string? CustomerName
         {
             get
             {

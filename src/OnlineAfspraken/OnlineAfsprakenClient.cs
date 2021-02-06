@@ -21,14 +21,14 @@ namespace OnlineAfspraken
             this.apiSecret = apiSecret;
         }
 
-        public async Task<GetAgendasResponse> GetAgendas()
+        public async Task<GetAgendasResponse?> GetAgendas()
         {
             var obj = await SubmitRequest<GetAgendasResponse>("getAgendas");
 
             return obj;
         }
 
-        public async Task<GetAppointmentsResponse> GetAppointments(int agendaId, DateTimeOffset startDate, DateTimeOffset endDate, 
+        public async Task<GetAppointmentsResponse?> GetAppointments(int agendaId, DateTimeOffset startDate, DateTimeOffset endDate, 
             int? appointmentTypeId = null, int? includeCancelled = null, int? limit = null, int? offset = null)
         {
             var queryParams = new Dictionary<string, string>();
@@ -50,7 +50,7 @@ namespace OnlineAfspraken
             return obj;
         }
 
-        public async Task<GetCustomersResponse> GetCustomers(DateTimeOffset? updatedAfter = null, int? limit = null, int? offset = null)
+        public async Task<GetCustomersResponse?> GetCustomers(DateTimeOffset? updatedAfter = null, int? limit = null, int? offset = null)
         {
             var queryParams = new Dictionary<string, string>();
             if (updatedAfter.HasValue)
@@ -65,7 +65,7 @@ namespace OnlineAfspraken
             return obj;
         }
 
-        public async Task<GetCustomerResponse> GetCustomer(long id)
+        public async Task<GetCustomerResponse?> GetCustomer(long id)
         {
             var queryParams = new Dictionary<string, string>();
             queryParams.Add("id", id.ToString());
@@ -76,7 +76,7 @@ namespace OnlineAfspraken
         }
 
 
-        private async Task<T> SubmitRequest<T>(string method, Dictionary<string, string>? queryParams = null) where T : BaseResponse
+        private async Task<T?> SubmitRequest<T>(string method, Dictionary<string, string>? queryParams = null) where T : BaseResponse
         {
             queryParams ??= new Dictionary<string, string>();
 

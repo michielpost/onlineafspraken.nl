@@ -8,12 +8,12 @@ namespace OnlineAfspraken
 {
     public static class SerializerHelper
     {
-        public static T XmlDeserialize<T>(this string toDeserialize)
+        public static T? XmlDeserialize<T>(this string toDeserialize)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             using (StringReader textReader = new StringReader(toDeserialize))
             {
-                return (T)xmlSerializer.Deserialize(textReader);
+                return (T?)xmlSerializer.Deserialize(textReader);
             }
         }
 

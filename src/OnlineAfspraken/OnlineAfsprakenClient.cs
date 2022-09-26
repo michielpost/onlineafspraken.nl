@@ -36,14 +36,14 @@ namespace OnlineAfspraken
             queryParams.Add("StartDate", startDate.ToString("yyyy-MM-dd"));
             queryParams.Add("EndDate", endDate.ToString("yyyy-MM-dd"));
 
-            if(appointmentTypeId != null)
-                queryParams.Add("AppointmentTypeId", appointmentTypeId.ToString());
-            if (includeCancelled != null)
-                queryParams.Add("IncludeCancelled", includeCancelled.ToString());
-            if (limit != null)
-                queryParams.Add("Limit", limit.ToString());
-            if (offset != null)
-                queryParams.Add("Offset", offset.ToString());
+            if(appointmentTypeId.HasValue)
+                queryParams.Add("AppointmentTypeId", appointmentTypeId.Value.ToString());
+            if (includeCancelled.HasValue)
+                queryParams.Add("IncludeCancelled", includeCancelled.Value.ToString());
+            if (limit.HasValue)
+                queryParams.Add("Limit", limit.Value.ToString());
+            if (offset.HasValue)
+                queryParams.Add("Offset", offset.Value.ToString());
 
             var obj = await SubmitRequest<GetAppointmentsResponse>("getAppointments", queryParams);
 
@@ -55,10 +55,10 @@ namespace OnlineAfspraken
             var queryParams = new Dictionary<string, string>();
             if (updatedAfter.HasValue)
                 queryParams.Add("UpdatedAfter", updatedAfter.Value.ToString("yyyy-MM-dd hh:mm:ss"));
-            if (limit != null)
-                queryParams.Add("Limit", limit.ToString());
-            if (offset != null)
-                queryParams.Add("Offset", offset.ToString());
+            if (limit.HasValue)
+                queryParams.Add("Limit", limit.Value.ToString());
+            if (offset.HasValue)
+                queryParams.Add("Offset", offset.Value.ToString());
 
             var obj = await SubmitRequest<GetCustomersResponse>("getCustomers", queryParams);
 

@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/6gket556dbq7a97s?svg=true)](https://ci.appveyor.com/project/michielpost/onlineafspraken-nl)
+[![Build .NET](https://github.com/michielpost/onlineafspraken.nl/actions/workflows/build.yml/badge.svg)](https://github.com/michielpost/onlineafspraken.nl/actions/workflows/build.yml)
 
 # onlineafspraken.nl
 C# SDK for onlineafspraken.nl   
